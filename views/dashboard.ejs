@@ -13,16 +13,62 @@
 
     <a href="/users/logout">Logout</a>
 
-    <h4>
-      Hello <%= user %>, <br />
-      clock in to start your shift.
-    </h4>
+    <h4>Hello <%= user %>, <br /></h4>
 
     <div>
-      <button type="button" id="clock-in" >Clock In</button>
-      <button type="button" id="clock-out">Clock Out</button>
+      <h3>Start your work shift.</h3>
+      <br />
+      <h4>Click the button below to clock in and start your work shift.</h4>
+
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>Time Clocked In</th>
+            <th>Clock In</th>
+            <th>Clock Out</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= user %></td>
+            <td>Current Time</td>
+            <td>
+              <div class="card-deck">
+                <div
+                  id="clock-in-card"
+                  class="card text-center text-white bg-info"
+                >
+                  <a form="{:id=>"clockInForm"}" id="clockInButton"
+                  class="card-link" date-remote="true" rel="nofollow"
+                  data-method="post" href="./timeclock.ejs"/>
+                  <div class="card-body">
+                    <button class="card-title">Clock In</button>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="card-deck">
+                <div
+                  id="clock-in-card"
+                  class="card text-center text-white bg-info"
+                >
+                  <a form="{:id=>"clockInForm"}" id="clockInButton"
+                  class="card-link" date-remote="true" rel="nofollow"
+                  data-method="post" href="./login.ejs"/>
+                  <div class="card-body">
+                    <button class="card-title">Clock Out</button>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!---      <button type="button" id="clock-in">Clock In</button>
+      <button type="button" id="clock-out">Clock Out</button> -->
     </div>
   </body>
 </html>
-
-<!-- john@gmail.com, password12-->

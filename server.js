@@ -57,10 +57,23 @@ app.get("/users/dashboard", checkNotAuthenticated, (req, res) => {
   res.render("dashboard", { user: req.user.name });
 });
 
+app.get("/users/timeclock", (req, res) => {
+  console.log(function(err){
+    if(err) {return next(err); }
+      res.redirect("./views/timeclock.ejs");
+
+  });
+});
+
 app.get("/users/logout", (req, res) => {
-  req.logout();
+  req.logout(function(err){
+    if (err) {return next(err); }
+    res.redirect('./views/login.ejs')
+  })
   res.render("index", { message: "You have logged out successfully" });
 });
+
+
 
 app.post("/users/register", async (req, res) => {
   let { name, email, password, password2 } = req.body;
