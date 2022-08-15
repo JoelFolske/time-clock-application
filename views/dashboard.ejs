@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/assets/dashboard.css" />
-    <script src="clockin.js"></script>
     <title>Dashboard</title>
   </head>
   <body>
@@ -16,59 +15,21 @@
     <h4>Hello <%= user %>, <br /></h4>
 
     <div>
-      <h3>Start your work shift.</h3>
+      <h3>Start your work shift</h3>
       <br />
       <h4>Click the button below to clock in and start your work shift.</h4>
 
-      <table class="content-table">
-        <thead>
-          <tr>
-            <th>User Name</th>
-            <th>Time Clocked In</th>
-            <th>Clock In</th>
-            <th>Clock Out</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= user %></td>
-            <td>Current Time</td>
-            <td>
-              <div class="card-deck">
-                <div
-                  id="clock-in-card"
-                  class="card text-center text-white bg-info"
-                >
-                  <a form="{:id=>"clockInForm"}" id="clockInButton"
-                  class="card-link" date-remote="true" rel="nofollow"
-                  data-method="post" href="./timeclock.ejs"/>
-                  <div class="card-body">
-                    <button class="card-title">Clock In</button>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="card-deck">
-                <div
-                  id="clock-in-card"
-                  class="card text-center text-white bg-info"
-                >
-                  <a form="{:id=>"clockInForm"}" id="clockInButton"
-                  class="card-link" date-remote="true" rel="nofollow"
-                  data-method="post" href="./login.ejs"/>
-                  <div class="card-body">
-                    <button class="card-title">Clock Out</button>
-                  </div>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
 
-      <!---      <button type="button" id="clock-in">Clock In</button>
-      <button type="button" id="clock-out">Clock Out</button> -->
-    </div>
+      <div class="card">
+        <div class="container">
+          <h4 class="user-name"><b><%= user %></b></h4>
+          <p>Software Engineer 1</p>
+          <button class="clock-in-out">Clock In</button>
+          <button class="clock-in-out">Clock Out</button>
+          <button class="start-end">Start Break</button>
+          <button class="start-end">End Break</button>
+        </div>
+      </div>
+      <h3><%= new Date();%></h3>
   </body>
 </html>

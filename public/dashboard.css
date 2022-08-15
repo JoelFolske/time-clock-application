@@ -1,8 +1,6 @@
 div {
   margin: 0;
   padding: 0;
-  width: auto;
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: first baseline;
@@ -10,62 +8,36 @@ div {
   background: rgb(255, 255, 255);
 }
 
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgb(44, 172, 240);
+  transition: 0.3s;
+  min-width: 350px;
+  min-height: 350px;
+}
+
+.user-name {
+  font-size: 35px;
+  padding: 0;
+  margin: 10px;
+}
+
+div.container {
+  background-color: rgb(149, 206, 255);
+  width: 180px;
+}
+
 button {
-  display: flex;
-  flex-direction: row;
+  margin: 5px;
 }
 
-
-
-
-
-
-.content-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.content-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
+/* Add some padding inside the card container */
+.container {
+  padding: 16px 16px;
 }
-
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
-}
-
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
-
-
-
-
-
-/* --------------- */
-
-
-
-
-
