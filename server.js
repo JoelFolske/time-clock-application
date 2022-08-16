@@ -56,15 +56,12 @@ app.get("/users/dashboard", checkNotAuthenticated, (req, res) => {
   console.log(req.isAuthenticated());
   res.render("dashboard", { user: req.user.name });
 });
+
 /*
 app.get("/users/timeclock", (req, res) => {
-  console.log(function(err){
-    if(err) {return next(err); }
-      res.redirect("/views/timeclock.ejs");
-
-  });
 });
 */
+
 app.get("/users/logout", (req, res) => {
   req.logout(function(err){
     if (err) {return next(err); }
